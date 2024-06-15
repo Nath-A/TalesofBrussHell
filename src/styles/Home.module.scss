@@ -1,0 +1,453 @@
+.container {
+  padding: 0;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer a {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  font-size: 4rem;
+  line-height: 1.15;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+}
+
+///////////////////////// Hero section /////////////////////////
+.hero {
+  background-color: #ffffff0c;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  margin-top: 8rem !important;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      max-width: 50%;
+      /* Adjust as needed */
+    }
+
+    .MuiTypography-root {
+      max-width: 45%;
+      /* Adjust as needed */
+    }
+  }
+}
+
+///////////////////////// SliderInfo /////////////////////////
+
+$base-font-size: 16px; // Define your base font size
+
+.borderedImage {
+  border: 0.125rem solid #fff; // 2px to rem
+  border-radius: 0.5rem; // 8px to rem
+  max-width: 100%;
+  height: auto;
+}
+
+.Slider {
+  border: 0.125rem solid #973832; // 2px to rem
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.mySlider {
+  height: 60vh; // Adjust as needed, set to a percentage of the viewport height
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.bullet {
+  background: #D9D9D9 !important;
+  opacity: 1 !important;
+
+  &.bullet_active {
+    background: #D63E38 !important;
+  }
+}
+
+.custom_grid {
+  &:nth-child(2) {
+    padding-left: 0 !important;
+  }
+}
+
+.swiper_text {
+  display: block;
+  background-color: rgba(214, 62, 56, 0.5);
+  padding: 1.25rem; // 20px to rem
+  height: 80%;
+  top: 10%;
+  position: relative;
+
+  h3 {
+    margin: 0 0 1.25rem; // 20px to rem
+    padding: 0;
+    color: white;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+}
+
+.swiper_slide {
+  position: relative;
+
+  &::before {
+    content: "";
+    background-color: rgba(214, 62, 56, 0.5);
+    width: 1.875rem; // 30px to rem
+    height: 6.25rem; // 100px to rem
+    display: inline-block;
+    top: 6.25rem; // 100px to rem
+    position: absolute;
+    right: -2rem; // -32px to rem
+  }
+
+  &:last-child {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.swiper_slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper_slide {
+  text-align: center;
+  font-size: 1.125rem; // 18px to rem
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.125rem solid #D63E38; // 2px to rem
+  border-radius: 0.5rem; // 8px to rem
+  padding: 0.5rem; // 8px to rem
+  height: 80% !important;
+  margin-top: 1.5rem;
+
+  &.swiper_slide_active {
+    height: 100% !important;
+    margin-top: 0rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .mySlider {
+    height: 25rem; // 400px to rem
+  }
+}
+
+.swiper-pagination-bullet {
+  &.custom-bullet {
+    top: 20px;
+    /* Adjust the value as needed to move the bullets down */
+  }
+}
+
+///////////////////////// Divider /////////////////////////
+
+.Divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+///////////////////////// HowToPlay /////////////////////////
+
+
+.PlayBorder {
+  border: 4px solid #d63e38;
+}
+
+///////////////////////// CenteredSlider /////////////////////////
+
+
+
+.swiper-slide-item {
+
+  padding: 1rem !important;
+  width: 158px;
+  height: 167px;
+}
+
+.active-slide {
+  transform: scaleX(3.28481) scaleY(3.26946) !important;
+  transition: transform 0.3s;
+  /* Add a transition for a smooth effect */
+
+}
+
+.prev-slide,
+.next-slide {
+  transform: scaleX(1.58228) scaleY(1.57485) !important;
+  transition: transform 0.3s ease;
+
+}
+
+.mySwiper {
+  .pagination {
+    background-color: red;
+  }
+}
+
+
+/* Custom SCSS for authentication modal */
+.modalContent {
+  background-color: #ffffff; // Set background color to white
+  border-radius: 10px;
+  padding: 20px;
+  width: 31.25rem;
+  /* 500px converted to rem */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .modalHeader {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+  }
+
+  .tabPanelContent {
+    padding-top: 1rem;
+
+    .submitBtn {
+      background-color: #D63E38;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+      margin-left: 4rem;
+      width: 20rem;
+
+
+      &:hover {
+        background-color: #c5312d;
+      }
+    }
+
+    .toggleText {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .toggleClickableText {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    .forgotPassword {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: underline;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-right: 4.8rem;
+      margin-top: 1rem;
+    }
+
+
+    .divider {
+      margin: 1rem 0;
+      text-align: center;
+      color: #999;
+
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      display: inline-block;
+      width: 3rem;
+      border-top: 1px solid #ccc;
+    }
+
+    .divider::before {
+      margin-right: 0.5em;
+      padding-top: 0.2em;
+    }
+
+    .divider::after {
+      margin-left: 0.5em;
+      padding-top: 0.2em;
+    }
+
+    //google button
+
+    .gsimaterialbutton {
+      background-color: WHITE;
+      background-image: none;
+      border: 1px solid #747775;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      color: #1f1f1f;
+      cursor: pointer;
+      font-family: 'Roboto', arial, sans-serif;
+      font-size: 14px;
+      height: 40px;
+      letter-spacing: 0.25px;
+      outline: none;
+      overflow: hidden;
+      padding: 0 12px;
+      position: relative;
+      text-align: center;
+      -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+      transition: background-color .218s, border-color .218s, box-shadow .218s;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: 20rem;
+
+      margin-left : 4rem;
+    }
+
+    .gsimaterialbutton .gsimaterialbuttonicon {
+      height: 20px;
+      margin-right: 12px;
+      min-width: 20px;
+      width: 20px;
+    }
+
+    .gsimaterialbutton .gsimaterialbuttoncontentwrapper {
+      -webkit-align-items: center;
+      align-items: center;
+      display: flex;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      height: 100%;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+    }
+
+    .gsimaterialbutton .gsimaterialbuttoncontents {
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+      font-family: 'Roboto', arial, sans-serif;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: top;
+    }
+
+    .gsimaterialbutton .gsimaterialbuttonstate {
+      -webkit-transition: opacity .218s;
+      transition: opacity .218s;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+
+
+    .gsimaterialbutton:disabled .gsimaterialbuttoncontents {
+      opacity: 38%;
+    }
+
+    .gsimaterialbutton:disabled .gsimaterialbuttonicon {
+      opacity: 38%;
+    }
+
+    .gsimaterialbutton:not(:disabled):active .gsimaterialbuttonstate,
+    .gsimaterialbutton:not(:disabled):focus .gsimaterialbuttonstate {
+      background-color: #303030;
+      opacity: 12%;
+    }
+
+    .gsimaterialbutton:not(:disabled):hover {
+      -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+      box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+    }
+
+    .gsimaterialbutton:not(:disabled):hover .gsimaterialbuttonstate {
+      background-color: #303030;
+      opacity: 8%;
+    }
+
+
+  }
+}
