@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import AuthenticationModel from "./AuthenticationModel";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const pages = ["Home", "About", "Contact"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -22,6 +23,7 @@ export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<HTMLElement>();
   const [anchorElUser, setAnchorElUser] = useState<HTMLElement>();
   const [userCookie, setUserCookie] = useState<any | null>(null); // Initialize userCookie state to null
+  const navigate = useNavigate();
 
   // const router = useRouter(); // Get router instance
 
@@ -63,7 +65,7 @@ export const NavBar = () => {
   const handleLogout = () => {
     Cookies.remove("user");
     setUserCookie(null);
-    router.push("/"); // Redirect to the login page after logout
+    //router.push("/"); // Redirect to the login page after logout
   };
 
   return (
@@ -114,8 +116,18 @@ export const NavBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} >
-                  <Typography textAlign="right" sx={{color:"#D63E38", fontSize: "1rem"}}>{page}</Typography>
+                <MenuItem
+                  key={page}
+                  onClick={() => {
+                    navigate(`/${page}`);
+                  }}
+                >
+                  <Typography
+                    textAlign="right"
+                    sx={{ color: "#D63E38", fontSize: "1rem" }}
+                  >
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -135,7 +147,9 @@ export const NavBar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => {
+                  navigate(`/${page}`);
+                }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
