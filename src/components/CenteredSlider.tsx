@@ -1,51 +1,81 @@
 // CenteredSlider.tsx
 
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Grid } from '@mui/material';
-import { Swiper, SwiperSlide } from 'swiper/react'
-import styles from '../styles/Home.module.scss'
-import { Pagination } from 'swiper/modules'
-import 'swiper/css/pagination'
-import 'swiper/swiper-bundle.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css/pagination';
+import 'swiper/swiper-bundle.css';
+import styles from '../styles/Home.module.scss';
+import CardItem from './CardItem'; // Import the new CardItem component
 
 const CenteredSlider: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0)
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const handleSlideChange = (swiper: any) => {
-    setActiveIndex(swiper.activeIndex)
-  }
+    setActiveIndex(swiper.activeIndex);
+  };
+
+  const slidesData = [
+    {
+      imgSrc: './placeholder.png',
+      title: 'Slide 1',
+      description: 'Description for char 1',
+      buttonText: 'Preview'
+    },
+    {
+      imgSrc: './placeholder.png',
+      title: 'Slide 2',
+      description: 'Description for char 2',
+      buttonText: 'Preview'
+    },
+    {
+      imgSrc: './placeholder.png',
+      title: 'Slide 3',
+      description: 'Description for char 3',
+      buttonText: 'Preview'
+    },
+    {
+      imgSrc: './placeholder.png',
+      title: 'Slide 4',
+      description: 'Description for char 4',
+      buttonText: 'Preview'
+    },
+    {
+      imgSrc: './placeholder.png',
+      title: 'Slide 5',
+      description: 'Description for char 5',
+      buttonText: 'Preview'
+    }
+  ];
 
   return (
-    <Grid paddingTop={10} paddingLeft={18}>
+    <Grid paddingTop={10} paddingLeft={1}>
       <Swiper
-        slidesPerView={5}
+        slidesPerView={3}
         centeredSlides={true}
-        pagination={{
-          clickable: true,
-          bulletActiveClass: styles.bullet_active,
-          bulletClass: `swiper-pagination-bullet ${styles.bullet}`
-        }}
+        spaceBetween={50}
+
+
         modules={[Pagination]}
         onSlideChange={handleSlideChange}
         className={`mySwiper ${styles.mySwiper}`}
         slideToClickedSlide={true}
-
-        style={{ height: '37rem', paddingTop: '12rem' }}
+        style={{ height: '30rem', paddingTop: '1rem' }}
       >
-        {[0, 1, 2, 3, 4].map(index => (
+        {slidesData.map((slide, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={`./Polygon.png`}
-              alt={`Slide ${index + 1}`}
-              className={`${styles['swiper-slide-item']} ${activeIndex === index ? styles['active-slide'] : ''
-                } ${activeIndex === index - 1 ? styles['prev-slide'] : ''} ${activeIndex === index + 1 ? styles['next-slide'] : ''
-                }`}
+            <CardItem
+              imgSrc={slide.imgSrc}
+              title={slide.title}
+              description={slide.description}
+              buttonText={slide.buttonText}
             />
           </SwiperSlide>
         ))}
       </Swiper>
     </Grid>
-  )
-}
+  );
+};
 
-export default CenteredSlider
+export default CenteredSlider;

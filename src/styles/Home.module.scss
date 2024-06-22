@@ -228,23 +228,12 @@ $base-font-size: 16px; // Define your base font size
 .swiper-slide-item {
 
   padding: 1rem !important;
-  width: 158px;
   height: 167px;
 }
 
-.active-slide {
-  transform: scaleX(3.28481) scaleY(3.26946) !important;
-  transition: transform 0.3s;
-  /* Add a transition for a smooth effect */
 
-}
 
-.prev-slide,
-.next-slide {
-  transform: scaleX(1.58228) scaleY(1.57485) !important;
-  transition: transform 0.3s ease;
 
-}
 
 .mySwiper {
   .pagination {
@@ -351,6 +340,7 @@ $base-font-size: 16px; // Define your base font size
     }
 
     //google button
+
 
     .gsimaterialbutton {
       background-color: WHITE;
