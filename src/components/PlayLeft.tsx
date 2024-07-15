@@ -49,7 +49,8 @@ const PlayLeft: React.FC<PlayLeftProps> = () => {
           sx={{
             width: "100%",
             height: "100%",
-            padding: "2rem",
+            padding: "2.8rem",
+            margin : "0rem",
           }}
         >
           <Typography
@@ -83,7 +84,8 @@ const PlayLeft: React.FC<PlayLeftProps> = () => {
           </Typography>
         </Grid>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6}
+      sx={{ marginLeft: "-0.2rem" }}>
         {/* <Image src={content.image.src} alt={content.image.alt} {...content.image.imageSize} /> */}
         <img src={content.image.src} alt={content.image.alt} />
       </Grid>

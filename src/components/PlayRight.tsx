@@ -27,7 +27,7 @@ const PlayRight: React.FC<PlayRightProps> = () => {
       justifyContent="right"
       sx={{ marginTop: "3rem" }}
     >
-      <Grid item xs={12} md={3}>
+      <Grid item xs={12} md={2.68}>
         <img src={content.imageSrc} alt={content.imageAlt} loading="lazy" />
       </Grid>
       <Grid item xs={12} md={6} className={styles.PlayBorder}>
@@ -39,7 +39,7 @@ const PlayRight: React.FC<PlayRightProps> = () => {
           sx={{
             width: "100%",
             height: "100%",
-            padding: "2rem",
+            padding: "2.8rem",
           }}
         >
           <Typography
