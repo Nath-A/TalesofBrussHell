@@ -142,6 +142,7 @@ export const NavBar = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              gap : "3rem",
             }}
           >
             {pages.map((page) => (
@@ -150,7 +151,7 @@ export const NavBar = () => {
                 onClick={() => {
                   navigate(`/${page}`);
                 }}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "#D63E38", display: "block", fontSize : "1rem", fontWeight : "bold", }}
               >
                 {page}
               </Button>
