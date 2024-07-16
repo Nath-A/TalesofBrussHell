@@ -17,12 +17,15 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
 const pages = ["Home", "About", "Contact"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "My Characters", "My table", "Logout"];
+const settingsDM = ["Profile", "Dashboard","Logout"];
+
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<HTMLElement>();
   const [anchorElUser, setAnchorElUser] = useState<HTMLElement>();
   const [userCookie, setUserCookie] = useState<any | null>(null); // Initialize userCookie state to null
+  const [menuSettings, setMenuSettings] = useState<string[] | null>(null);
   const navigate = useNavigate();
 
   // const router = useRouter(); // Get router instance
@@ -45,13 +48,13 @@ export const NavBar = () => {
 
   useEffect(() => {
     const Cookie = Cookies.get("user");
-
     // Check if the cookie exists and is not undefined
     if (Cookie) {
       // Parse the JSON string stored in the cookie
       const parsedUser = JSON.parse(Cookie);
       console.log(parsedUser);
       setUserCookie(parsedUser);
+      setMenuSettings(parsedUser.role !== 'player' ? settingsDM : settings);
     } else {
       console.log("User cookie does not exist or is undefined.");
     }
@@ -65,8 +68,16 @@ export const NavBar = () => {
   const handleLogout = () => {
     Cookies.remove("user");
     setUserCookie(null);
+    setMenuSettings(null);
+    window.location.href = '/';
     //router.push("/"); // Redirect to the login page after logout
   };
+  const handleDashboard = () => {
+    navigate(`/dashboard`)
+  }
+  const handleMyTables = () => {
+    navigate(`/mytable`)
+  }
 
   return (
     <AppBar
@@ -80,7 +91,7 @@ export const NavBar = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="/src/assets/logoNav.png" alt="perso" />
+          <img src="/src/assets/logoNav2.png" alt="perso" />
 
           <Grid
             container
@@ -184,13 +195,19 @@ export const NavBar = () => {
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
-                  {settings.map((setting) => (
+                  
+                  {menuSettings?.map((setting) => (
                     <MenuItem
                       key={setting}
                       onClick={
                         setting === "Logout"
-                          ? handleLogout
-                          : handleCloseUserMenu
+                        ? handleLogout
+                        : setting === "Dashboard"
+                        ? handleDashboard
+                        : setting === "My table"
+                        ? handleMyTables
+                        : handleCloseUserMenu
+                        
                       }
                     >
                       <Typography textAlign="center">{setting}</Typography>

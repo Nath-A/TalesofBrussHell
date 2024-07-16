@@ -1,7 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
-
   background-image: url("./assets/back_dnd.jpg");
   background-size: cover; /* or 'contain' depending on your preference */
   background-repeat: no-repeat;

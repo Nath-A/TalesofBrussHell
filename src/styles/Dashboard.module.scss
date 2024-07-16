@@ -1,0 +1,14 @@
+.container {
+  background-image: url("../assets/wallpaperflare.com_wallpaper.jpg");
+  background-size: cover; /* Ensure the background image covers the entire element */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  height: 100vh; /* Ensure the element takes up the full viewport height */
+  width: 100%; /* Ensure the element takes up the full width */
+}
+
+.main{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-left: 10rem;
+}
