@@ -1,0 +1,89 @@
+.container {
+  color: white; // Ensure text is visible
+}
+
+.main {
+  position: relative;
+  background-color: black; // Set the background color to black
+  height: 100vh;
+  overflow-x: hidden; // Prevent horizontal scrolling
+}
+
+.banner {
+  width: 100%;
+  height: 500px; // Adjust as needed
+  background: url('/playing.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px); // Optional: adds a blur effect to the background
+  z-index: 1;
+}
+
+.typography {
+  color: white;
+  text-align: center;
+}
+
+.map {
+  width: 20rem;
+  height: 300px; // Adjust for smaller screens
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+// Media Queries for responsiveness
+@media (max-width: 1024px) {
+  .banner {
+    height: 400px; 
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 300px; // Adjust banner height for mobile screens
+  }
+
+  .content {
+    padding: 5px;
+  }
+
+  .map {
+    height: 250px; // Adjust map height for mobile screens
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 200px; // Adjust banner height for very small screens
+  }
+
+  .content {
+    padding: 2px;
+  }
+
+  .map {
+    height: 200px; // Adjust map height for very small screens
+  }
+}
