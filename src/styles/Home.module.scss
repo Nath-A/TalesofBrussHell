@@ -462,3 +462,17 @@ $base-font-size: 16px; // Define your base font size
     //   top: 7%;
     //   position: relative;
     // }
+
+
+    ///////////////////////// Cards /////////////////////////
+
+    .card {
+      background-color: black; // Card background color
+      color: gray; // Card text color
+    }
+    
+    .badge {
+      color: white; // Badge text color
+      background-color: white; // Badge background color
+    }
+    
